@@ -1,0 +1,20 @@
+.dropped_controls {
+  position: absolute;
+  right: 8px;
+  top: 8px; }
+  .dropped_controls button {
+    border: none;
+    background: none;
+    font-size: 0; }
+    .dropped_controls button.dropped_remove:before {
+      color: red; }
+    .dropped_controls button:before {
+      font-size: 24px;
+      opacity: 0.2;
+      font-family: dashicons; }
+    .dropped_controls button:hover {
+      cursor: pointer; }
+      .dropped_controls button:hover:before {
+        opacity: 0.6; }
+
+/*# sourceMappingURL=dropped-box.css.map */

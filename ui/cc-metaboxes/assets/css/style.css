@@ -1,0 +1,85 @@
+.metaboxes {
+  overflow: hidden;
+  padding: 2em 0; }
+
+.cc-metaboxes_column .column-header {
+  padding: 0 1em;
+  display: block; }
+.cc-metaboxes_column h2 {
+  display: inline-block;
+  margin-right: 16px; }
+
+.add_metabox-btn {
+  position: absolute;
+  top: 1em;
+  right: 1em; }
+  .add_metabox-btn:before {
+    font-family: dashicons;
+    font-size: 16px;
+    line-height: 16px;
+    margin-right: 8px;
+    vertical-align: middle; }
+
+.metabox_column {
+  width: 58%;
+  float: left;
+  position: relative;
+  background: #fafafa;
+  min-height: 64px;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .metabox_column .metaboxes_box {
+    padding: 1em; }
+    .metabox_column .metaboxes_box .metabox {
+      margin: 1em 0;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.1); }
+      .metabox_column .metaboxes_box .metabox .field {
+        padding: 0; }
+        .metabox_column .metaboxes_box .metabox .field .dropped-body {
+          padding: 1em; }
+          .metabox_column .metaboxes_box .metabox .field .dropped-body label {
+            width: 50%;
+            padding: 0 1em; }
+      .metabox_column .metaboxes_box .metabox header {
+        padding: 1em;
+        background: #f2f2f2;
+        position: relative;
+        font-weight: bold; }
+        .metabox_column .metaboxes_box .metabox header h4 {
+          margin: 0; }
+      .metabox_column .metaboxes_box .metabox .metabox_settings {
+        padding: 1em;
+        background: #f8f8f8;
+        display: flex;
+        flex-flow: row wrap; }
+        .metabox_column .metaboxes_box .metabox .metabox_settings label {
+          flex: 0 0 50%;
+          margin-bottom: 1em; }
+          .metabox_column .metaboxes_box .metabox .metabox_settings label span {
+            display: inline-block;
+            width: 120px; }
+          .metabox_column .metaboxes_box .metabox .metabox_settings label:last-child {
+            margin-bottom: 0; }
+      .metabox_column .metaboxes_box .metabox .fields {
+        padding: 1em; }
+
+.fields_column {
+  width: 38%;
+  float: right;
+  min-height: 64px;
+  background: #fafafa;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
+  .fields_column .fields_box {
+    padding: 1em; }
+
+.fields_column .field,
+.fields .field {
+  background: white;
+  padding: .8em 1em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-bottom: 1em; }
+  .fields_column .field:last-child,
+  .fields .field:last-child {
+    margin-bottom: 0; }
+
+/*# sourceMappingURL=style.css.map */
