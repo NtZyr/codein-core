@@ -37,5 +37,19 @@ add_settings_field(
     'core_settings'
 );
 
+add_settings_field(
+    'core_metaboxe',
+    __( 'Core Metaboxes', 'codein-core' ),
+    function() {
+?>
+<input id="core_metaboxes" value="1" name="core_metaboxes" <?= checked( 1, get_option( 'core_metaboxes' ), false ); ?> type="checkbox"/>
+<label for="core_metaboxes"><?= __( 'Toggle CC Metaboxes', 'codein-core' ); ?></label>
+<?php
+    },
+    $this->MENU_SLUG,
+    'core_settings'
+);
+
 register_setting( 'core_settings', 'core_widgets' );
 register_setting( 'core_settings', 'core_shortcodes' );
+register_setting( 'core_settings', 'core_metaboxes' );

@@ -18,8 +18,8 @@ function cc_metabox( $box_num, $box = null ) {
         'side' => __( 'Side', 'codein-core'),
     );
 ?>
-<div class="metabox">
-    <header>
+<div class="metabox setting-box ajax-block">
+    <header class="setting-header">
         <h4><?= ( $box_title ? $box_title : __( 'Metabox Name', 'codein-core' ) ); ?></h4>
         <div class="dropped_controls">
             <button class="dashicons-no-alt dropped_remove" type="button"><?= __( 'Remove', 'codein-core' ); ?></button>
@@ -27,14 +27,14 @@ function cc_metabox( $box_num, $box = null ) {
         </div>
     </header>
     <div class="dropped-body">
-        <div class="metabox_settings">
+        <div class="metabox_settings setting-body">
             <label>
                 <span><?= __( 'Metabox ID', 'codein-core' ); ?></span>
                 <input name="metaboxes[<?= $box_num; ?>][metabox_id]" value="<?= $box_id; ?>" type="text">
             </label>
             <label>
                 <span><?= __( 'Metabox title', 'codein-core' ); ?></span>
-                <input class="metabox_title" value="<?= $box_title; ?>" name="metaboxes[<?= $box_num; ?>][metabox_title]" type="text">
+                <input class="ajax-title" value="<?= $box_title; ?>" name="metaboxes[<?= $box_num; ?>][metabox_title]" type="text">
             </label>
             <label>
                 <span><?= __( 'Post types', 'codein-core' ); ?></span>

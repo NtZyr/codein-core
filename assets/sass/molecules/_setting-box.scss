@@ -1,0 +1,53 @@
+.setting-box {
+    margin: 1em 0;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+
+    .setting-header{
+        padding: 1em;
+        background: #f2f2f2;
+        position: relative;
+        font-weight: bold;
+
+        h4 {
+            margin: 0;
+        }
+    }
+
+    .setting-body {
+        padding: 1em;
+        background: #f8f8f8;
+    }
+}
+
+.dashicons-plus {
+    &:before {
+        font-family: dashicons;
+        font-size: 16px;
+        line-height: 16px;
+        margin-right: 8px;
+        vertical-align: middle;
+    }
+}
+
+.setting-btn {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.setting_box-header {
+    position: relative;
+
+    h2 {
+        display: inline-block;
+    }
+
+    .setting-btn {
+        right: 0;
+    }
+}
+
+.posttypes {
+    margin-top: 2em;
+}

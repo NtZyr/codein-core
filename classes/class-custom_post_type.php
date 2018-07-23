@@ -3,24 +3,40 @@
 namespace Codein\Core;
 
 class CustomPostType {
-    public $posttype_name;
+    // public $posttype_name;
+    // public $posttype_args;
+    // public $posttype_labels;
+    public $posttype_id;
+    public $posttype_label;
     public $posttype_args;
     public $posttype_labels;
 
-    public function __construct( $name, $args = array(), $labels = array() ) {
-        $this->posttype_name = strlower( str_replace( ' ', '_', $name ) );
-        $this->posttype_args = $args;
-        $this->posttype_args = $labels;
+    public function __construct( $posttype ) {
+        // $this->posttype_name = strlower( str_replace( ' ', '_', $name ) );
+        // $this->posttype_args = $args;
+        // $this->posttype_args = $labels;
 
-        if( ! post_type_exists( $this->post_type_name ) ) {
-            add_action( 'init', array( &$this, 'register_post_type' ) );
+        // $this->save();
+        
+        $this->posttype_id = $posttype['id'];
+        $this->posttype_label = $posttype['label'];
+        $this->posttype_args = $posttype['args'];
+        $this->posttype_labels = array();
+
+        if( ! post_type_exists( $this->posttype_id ) ) {
+            add_action( 'init', array( $this, 'register_post_type' ) );
         }
+
+        // flush_rewrite_rules();
+
+        // var_dump( $this->posttype_id );
+        // var_dump( get_post_types() );
 
         // $this->save();
     }
 
     public function register_post_type() {
-        $name       = ucwords( str_replace( '_', ' ', $this->post_type_name ) );
+        $name       = $this->posttype_label;
         $plural     = $name . 's';
 
         $labels = array_merge(
@@ -40,27 +56,19 @@ class CustomPostType {
                 'menu_name'             => $plural
             ),
 
-            $this->post_type_labels
+            $this->posttype_labels
         );
 
         $args = array_merge(
             array(
                 'label'                 => $plural,
                 'labels'                => $labels,
-                'public'                => true,
-                'publicly_queryable'    => true,
-                'show_ui'               => true,
-                'supports'              => array( 'title', 'editor', 'thumbnail' ),
-                'show_in_nav_menus'     => true,
-                '_builtin'              => false,
-                'has_archive'           => true
+                'show_in_menu'          => true
             ),
 
-            $this->post_type_args
+            $this->posttype_args
         );
 
-        register_post_type( $this->post_type_name, $args );
+        register_post_type( $this->posttype_id, $args );
     }
-
-
 }
