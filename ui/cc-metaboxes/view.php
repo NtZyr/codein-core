@@ -16,15 +16,16 @@
         <div class="cc-metaboxes_column metabox_column">
             <header class="column-header">
                 <h2><?= __( 'Metaboxes', 'codein-core' ); ?></h2>
-                <button title="<?= __( 'Add metabox', 'codein-core' ); ?>" class="dashicons-plus add_metabox-btn button-primary" name="add_metabox" type="button"><?= __( 'Add metabox', 'codein-core' ); ?></button>
+                <button title="<?= __( 'Add metabox', 'codein-core' ); ?>" class="dashicons-plus ajax-add setting-btn button-primary" name="cc_add_metabox" type="button"><?= __( 'Add metabox', 'codein-core' ); ?></button>
             </header>
-            <div class="metaboxes_box">
+            <div class="metaboxes_box ajax_box">
                 <?php if( $metaboxes && is_array( $metaboxes ) ) : ?>
 
                 <?php foreach( $metaboxes as $box_num => $box ) : ?>
                     <?php cc_metabox( $box_num, $box ); ?>
                 <?php endforeach; ?>
-                <?php else : echo __( 'No metaboxes.', 'codein-core' ); ?>
+                <?php else : ?>
+                    <p class="ajax-nodata"><?= __( 'No metaboxes.', 'codein-core' ); ?></p>
                 <?php endif; ?>
             </div>
         </div>
