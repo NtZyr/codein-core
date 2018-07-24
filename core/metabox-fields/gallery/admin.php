@@ -1,6 +1,6 @@
 <?php
     $input_name = $box_id . '_' . $field['id'] . '_' . $index;
-    var_dump( $meta[$input_name] );
+    $gallery = ( !empty($meta[$input_name][0]) ? explode( ',', $meta[$input_name][0]) : '' );
 ?>
 <div class="gallery">
     <div class="gallery-controls">
@@ -9,6 +9,15 @@
         <input name="<?= $input_name ?>" class="gallery_case" type="hidden">
     </div>
     <div class="gallery-body">
-        <p><?= __( 'Gallery is empty', 'codein-core' ); ?></p>
+        <?php if( $gallery ) : ?>
+            <?php foreach( $gallery as $image_id ) : ?>
+                <div class="gallery-item">
+                    <div class="remove">x</div>
+                    <?= wp_get_attachment_image( $image_id, 'large' ); ?>
+                </div>
+            <?php endforeach; ?>
+        <?php else : ?>
+            <p><?= __( 'Gallery is empty', 'codein-core' ); ?></p>
+        <?php endif; ?>
     </div>
 </div>
