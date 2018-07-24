@@ -12,7 +12,7 @@ require 'classes/class-settings_page.php';
 require 'classes/class-shortcode.php';
 require 'classes/class-metabox.php';
 require 'classes/class-custom_post_type.php';
-// require 'classes/class-metabox_field.php';
+require 'classes/class-metabox_field.php';
 
 add_action( 'admin_enqueue_scripts', function() {
     require 'libs/init.php';

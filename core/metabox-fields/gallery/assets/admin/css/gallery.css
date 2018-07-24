@@ -1,0 +1,29 @@
+.gallery-body {
+    padding-top: 32px;
+}
+
+.gallery-item {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+}
+
+.gallery-item .remove {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: white;
+    background: #222;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block
+}

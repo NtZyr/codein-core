@@ -3,7 +3,7 @@
 function field_body( $label, $type, $count, $box_num, $field_id = null ) {
     $field_id = ( $field_id != null ? $field_id : '' );
 ?>
-    <header>
+    <header class="setting-header">
         <?= $label; ?>
         <div class="dropped_controls">
             <button class="dashicons-no-alt dropped_remove" type="button"><?= __( 'Remove', 'codein-core' ); ?></button>
@@ -13,12 +13,12 @@ function field_body( $label, $type, $count, $box_num, $field_id = null ) {
     <div class="dropped-body">
         <p>
             <label><?= __( 'Field ID', 'codein-core' ); ?>
-                <input value="<?= $field_id; ?>" name="metaboxes[<?= $box_num; ?>][fields][<?= $count; ?>][field_id]" type="text">
+                <input value="<?= $field_id; ?>" name="metaboxes[<?= $box_num; ?>][fields][<?= $count; ?>][id]" type="text">
             </label>
             <label><?= __( 'Field Name', 'codein-core' ); ?>
-                <input value="<?= $label; ?>" name="metaboxes[<?= $box_num; ?>][fields][<?= $count; ?>][field_title]" type="text">
+                <input value="<?= $label; ?>" name="metaboxes[<?= $box_num; ?>][fields][<?= $count; ?>][title]" type="text">
             </label>
-            <input value="<?= $type; ?>" name="metaboxes[<?= $box_num; ?>][fields][<?= $count; ?>][field_type]" type="hidden">
+            <input value="<?= $type; ?>" name="metaboxes[<?= $box_num; ?>][fields][<?= $count; ?>][type]" type="hidden">
         </p>
         <?php
             Codein\Core\Metabox\MetaboxField::field_init( $type );
